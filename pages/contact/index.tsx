@@ -14,8 +14,9 @@ const Contact: NextPage = () => {
             Contact
           </h2>
           <p className="mb-4 lg:mb-10 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
-            Got a technical issue? Want to send feedback about a beta feature?
-            Need details about our Business plan? Let us know.
+            I appreciate that you visited my portfolio website.
+            If you have something to say, please don't hesitate to send me a message.
+            I'd love to hear your comments, feedback or suggestions!
           </p>
           <form action="#" className="space-y-8">
             <div>
