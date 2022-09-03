@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
@@ -9,20 +8,17 @@ const Header = () => {
   const targetElId = "targetEl";
   const themeToggleId = "themeToggleEl";
 
-  const router = useRouter();
-  const currPage = router.pathname;
-
-  const pages = [
+  const sections = [
     {
-      link: "/aboutme",
+      link: "#aboutme",
       title: "About me",
     },
     {
-      link: "/projects",
+      link: "#projects",
       title: "Projects",
     },
     {
-      link: "/contact",
+      link: "#contact",
       title: "Contact",
     },
   ];
@@ -40,10 +36,6 @@ const Header = () => {
       el.classList.remove("hidden");
       el.classList.add("block");
     }
-  };
-
-  const isCurrentPage = (link: string): boolean => {
-    return currPage == link;
   };
 
   return (
@@ -91,15 +83,13 @@ const Header = () => {
             id={targetElId}
           >
             <ul className="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-              {pages.map((page, idx) => {
+              {sections.map((sec, idx) => {
                 return (
                   <li
-                    key={`${idx}-${page.title}`}
-                    className={`block py-2 pr-4 pl-3 rounded hover:text-blue-700 md:p-0 md:dark:hover:text-white ${
-                      isCurrentPage(page.link) ? "text-blue-700" : ""
-                    }`}
+                    key={`${idx}-${sec.title}`}
+                    className="block py-2 pr-4 pl-3 rounded hover:text-blue-700 md:p-0 md:dark:hover:text-white"
                   >
-                    <Link href={page.link}>{page.title}</Link>
+                    <Link href={sec.link}>{sec.title}</Link>
                   </li>
                 );
               })}
