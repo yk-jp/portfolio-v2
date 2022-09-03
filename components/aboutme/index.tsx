@@ -8,7 +8,8 @@ const Aboutme: NextPage = () => {
         <title>About me - Yusuke Portfolio</title>
       </Head>
 
-      <h1 className="">Contact</h1>
+      <section className="container mx-auto">
+      </section>
     </>
   );
 };
