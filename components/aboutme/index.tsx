@@ -20,8 +20,8 @@ const Aboutme: NextPage = () => {
       </Head>
 
       <section className="bg-white dark:bg-gray-900 h-screen py-16">
-        <div className="y-8 md:py-16 px-4 mx-auto max-w-screen-md flex justify-center flex-col-reverse md:flex-row content-center">
-          <div className="md:basis-9/12 pt-9 content-center">
+        <div className="y-8 md:py-16 px-4 mx-auto max-w-screen-md flex flex-col-reverse md:flex-row content-center">
+          <div className="md:basis-4/6 pt-9 content-center">
             <div>
               <p className="text-center text-3xl">Hi there, It's Yusuke</p>
               <p className="text-center text-xl">Full Stack Developer</p>
