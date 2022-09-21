@@ -1,9 +1,12 @@
 import Link from "next/link";
-
+import { useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
+  const navBtnRef = useRef<HTMLButtonElement>(null);
+  const navMenuRef = useRef<HTMLDivElement>(null);
+
   const triggerElId = "triggerEl";
   const targetElId = "targetEl";
   const themeToggleId = "themeToggleEl";
@@ -23,20 +26,37 @@ const Header = () => {
     },
   ];
 
-  const popMenuItem = (): void => {
-    const triggerEl = document.getElementById(triggerElId)!;
+  const popupMenuItem = (): void => {
     const el = document.getElementById(targetElId)!;
+    el.classList.contains("block") ? hideElement(el) : displayElement(el);
+  };
 
-    if (triggerEl.classList.contains("hidden")) return;
+  const displayElement = (el: HTMLElement): void => {
+    el.classList.remove("hidden");
+    el.classList.add("block");
+  };
 
-    if (el.classList.contains("block")) {
-      el.classList.remove("block");
-      el.classList.add("hidden");
-    } else {
-      el.classList.remove("hidden");
-      el.classList.add("block");
+  const hideElement = (el: HTMLElement): void => {
+    el.classList.remove("block");
+    el.classList.add("hidden");
+  };
+
+  const navBarHandler = (e: MouseEvent) => {
+    if (navBtnRef.current?.contains(e.target as Node)) return;
+
+    if (!navMenuRef.current?.contains(e.target as Node)) {
+      const el = document.getElementById(targetElId)!;
+      hideElement(el);
     }
   };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", navBarHandler);
+
+    return () => {
+      document.removeEventListener("mousedown", navBarHandler);
+    };
+  }, []);
 
   return (
     <>
@@ -46,11 +66,12 @@ const Header = () => {
             <button
               id={triggerElId}
               data-collapse-toggle="navbar-sticky"
+              ref={navBtnRef}
               type="button"
               className="collapse inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 hover:text-blue-700 "
               aria-controls="navbar-sticky"
               aria-expanded="false"
-              onClick={popMenuItem}
+              onClick={popupMenuItem}
             >
               <svg
                 className="w-6 h-6"
@@ -81,16 +102,19 @@ const Header = () => {
           <div
             className="hidden items-center w-full md:flex md:w-auto"
             id={targetElId}
+            ref={navMenuRef}
           >
             <ul className="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
               {sections.map((sec, idx) => {
                 return (
-                  <li
-                    key={`${idx}-${sec.title}`}
-                    className="block py-2 pr-4 pl-3 rounded hover:text-blue-700 md:p-0 md:dark:hover:text-white"
-                  >
-                    <Link href={sec.link}>{sec.title}</Link>
-                  </li>
+                  <Link href={sec.link} className="">
+                    <li
+                      key={`${idx}-${sec.title}`}
+                      className="block py-2 pr-4 pl-3 rounded cursor-pointer hover:text-blue-700 md:p-0 md:dark:hover:text-white"
+                    >
+                      {sec.title}
+                    </li>
+                  </Link>
                 );
               })}
             </ul>
