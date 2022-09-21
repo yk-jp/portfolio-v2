@@ -10,8 +10,8 @@ const Contact: NextPage = () => {
         <title>Contact - Yusuke Portfolio</title>
       </Head>
 
-      <section className="bg-white dark:bg-gray-900 h-screen grid content-end">
-        <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+      <section className="bg-white dark:bg-gray-900 h-screen py-8">
+        <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md content-center">
           <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
             Contact
           </h2>
