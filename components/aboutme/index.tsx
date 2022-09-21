@@ -8,7 +8,7 @@ import { faLinkedin, faGithubSquare } from "@fortawesome/free-brands-svg-icons";
 import { faFile } from "@fortawesome/free-solid-svg-icons";
 
 const Aboutme: NextPage = () => {
-  const profileImg = "/profile.jpg";
+  const profileImg = "/portfolio-v2/profile.jpg"; //absolute path
   const linkedinUrl = "https://www.linkedin.com/in/yusukekohatsu/";
   const gitHubUrl = "https://github.com/yk-jp";
   const resumePdf = "/resume.pdf";
