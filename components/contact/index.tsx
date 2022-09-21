@@ -47,7 +47,11 @@ const Contact: NextPage = () => {
               >
                 Subject
               </label>
-              <input type="hidden" name="_subject" value="New message from my portfolio website!"/>
+              <input
+                type="hidden"
+                name="_subject"
+                value="New message from my portfolio website!"
+              />
               <input
                 type="text"
                 id="subject"

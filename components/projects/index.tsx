@@ -7,12 +7,9 @@ const Projects: NextPage = () => {
       <Head>
         <title>Projects - Yusuke Portfolio</title>
       </Head>
-      <section>
-        projects
-      </section>
+      <section>projects</section>
     </>
   );
 };
 
 export default Projects;
-
