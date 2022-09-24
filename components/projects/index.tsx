@@ -10,44 +10,38 @@ import { TabMenu } from "../../type/project";
 const Projects: NextPage = () => {
   const hidden = "hidden";
   const auto = "auto";
-  const hightLight = "text-blue-700";
+  const highLight = "text-blue-700";
 
   const [tabFilter, setTabFilter] = useState<String>(TabMenu.All);
   const [projectsList, setProjectList] = useState(projectsData);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalProject, setModalProject] = useState<any>();
 
   const hasProjects = () => {
     return projectsList.length !== 0;
   };
 
+  const isModalOpen = () => {
+    if(!modalProject) return false
+    return true
+  }
+
   const toggleBodyScrollStyle = () => {
-    const body = document.querySelector("body")!;
-    if (body.style.overflow == hidden) {
+   const body = document.querySelector("body")!;
+    if (body.style.overflow === hidden) {
       body.style.overflow = auto;
-      return;
-    }
-    body.style.overflow = auto;
+      return
+    } 
+    body.style.overflow = hidden;
   };
 
   const highLightTab = (menu: String) => {
     if (menu !== tabFilter) return;
-    return hightLight;
+    return highLight;
   };
 
-  const toggleModal = (e: any) => {
-    const id = e.target.id!;
-    const ele = document.getElementById(id)!;
-
-    if (ele.classList.contains(hidden)) {
-      ele.classList.remove(hidden);
-      return;
-    }
-    ele.classList.add(hidden);
-  };
-
-  const openModal = (project: any) => {
-    setIsModalOpen(true) 
-    return <Modal project={project} />;
+  const toggleModal = (project : any) => {
+    toggleBodyScrollStyle()
+    setModalProject(project)
   };
 
   const filterProjects = (menu: String) => {
@@ -100,49 +94,63 @@ const Projects: NextPage = () => {
           <div className="flex flex-wrap justify-between">
             {!hasProjects() && (
               <p className="mb-3 font-normal text-gray-700">
-                {" "}
-                Comming soon...{" "}
+                Comming soon...
               </p>
             )}
+
+            {
+              isModalOpen() && 
+                <Modal
+                  project={modalProject}
+                  toggleModal={toggleModal}
+                />
+            }
+
             {projectsList.map((project, idx) => {
               return (
-                <div
-                  className="m-auto mb-3 w-8/12 md:w-[45%] bg-white rounded-lg border border-gray-200 shadow-md h-fit md:mb-0 md:m-3"
-                  key={`${idx}-${project.title}`}
-                >
-                  <img
-                    src={project.img}
-                    className="rounded-t-lg w-full p-0 h-[200px]"
-                  />
-                  <div className="p-5 h-1/2">
-                    <p className="mb-4 text-2xl font-bold tracking-tight text-gray-900">
-                      {project.title}
-                    </p>
-                    <p className="mb-5 font-normal text-gray-700">
-                      {project.description}
-                    </p>
-                    <button
-                      className="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 mr-3"
-                      onClick={() => openModal(project)}
-                    >
-                      Read more
-                    </button>
-                    {project.link.github && (
-                      <Link href={project.link.github}>
-                        <button className="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 mr-3">
-                          Github
-                        </button>
-                      </Link>
-                    )}
-                    {project.link.live && (
-                      <Link href={project.link.live}>
-                        <button className="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 mr-3">
-                          Live
-                        </button>
-                      </Link>
-                    )}
+                <>
+                  <div
+                    className="m-auto mb-3 w-8/12 md:w-[45%] bg-white rounded-lg border border-gray-200 shadow-md h-fit md:mb-0 md:m-3"
+                    key={`${idx}-${project.title}`}
+                  >
+                    <img
+                      src={project.img}
+                      className="rounded-t-lg w-full p-0 h-[200px]"
+                    />
+                    <div className="p-5 h-1/2">
+                      <p className="mb-4 text-2xl font-bold tracking-tight text-gray-900">
+                        {project.title}
+                      </p>
+                      <p className="mb-5 font-normal text-gray-700">
+                        {project.description}
+                      </p>
+                      <hr 
+                        className="bg-gray-100"
+                      />
+                      <br/>
+                      <button
+                        className="inline-flex items-center py-2 px-3 text-sm font-medium text-center rounded-lg focus:ring-4 focus:outline-none focus:ring-blue-300 mr-3 hover:text-blue-700"
+                        onClick={() => toggleModal(project)}
+                      >
+                        Read more
+                      </button>
+                      {project.link.github && (
+                        <Link href={project.link.github}>
+                          <button className="inline-flex items-center py-2 px-3 text-sm font-medium text-center rounded-lg focus:ring-4 focus:outline-none focus:ring-blue-300 mr-3 hover:text-blue-700">
+                            Github
+                          </button>
+                        </Link>
+                      )}
+                      {project.link.live && (
+                        <Link href={project.link.live}>
+                          <button className="inline-flex items-center py-2 px-3 text-sm font-medium text-center rounded-lg focus:ring-4 focus:outline-none focus:ring-blue-300 mr-3 hover:text-blue-700">
+                            Live
+                          </button>
+                        </Link>
+                      )}
+                    </div>
                   </div>
-                </div>
+                </>
               );
             })}
           </div>
