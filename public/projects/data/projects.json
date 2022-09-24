@@ -67,8 +67,8 @@
     "title": "Password Manager",
     "description": "This is a full stack app to manage your password.",
     "img": "../img/passwordmanager.png",
-    "whatIlearnt": "",
-    "difficulties": "",
+    "whatIlearnt": "I was able to learn the basic authentication system. First time I incorporated authentication logic in my project. I was happy to grasp the understanding of how and where to store and manage tokens(e.g. cookie or local storage) and why exactly JWT is used.",
+    "difficulties": "I needed to digest how the refresh token works and how each request and response has to be authorized in the first place. I browsed loads of articles on the internet and learnt from them enough.",
     "techStack": [
       "HTML",
       "CSS",
