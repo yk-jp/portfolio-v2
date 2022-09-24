@@ -1,0 +1,130 @@
+[
+  {
+    "category": "oss",
+    "title": "support new feature to generate pdf and deprecate a class for pdf to enhance the usability",
+    "description": "This is the pdf generator built in python that I contributed to for the first time!",
+    "img": "/projects/img/fpdf2.png",
+    "whatIlearnt": "I learnt how to work on issues and communicate with OSS maintainers and how important backward compatibility is. In order not to break the current codebase, I thoroughly checked how contributors committed their changes and wrote readable code. If I had questions, I didn't hesitate to ask the maintainers about them.",
+    "difficulties": "At first, I hesitated to ask for an assignment of the issue to the OSS maintainers even though the issue was labelled as a \"good first issue\".  I encouraged myself to start the issue. I ran the codebase and checked all I needed in detail. That helped me to understand how the logic is structured. Every time I got feedback for the PR, I fixed the code and ran the test and I tried my best to leave easy-to-understand comments. My PR was successfully merged.",
+    "link": {
+      "github": "https://github.com/PyFPDF/fpdf2/pull/543"
+    }
+  },
+  {
+    "category": "web",
+    "title": "Expense Tracker",
+    "description": "This app is an expense tracker to track and manage your expense.",
+    "img": "/projects/img/expenseTracker.png",
+    "whatIlearnt": "I wanted to know the importance of containerization and applied docker in the app. I learned how to containerize everything we need and connect them to one another. Besides that, I learnt how to collab with my team members to develop efficiently.",
+    "difficulties": "I was used to developing full-stack apps by myself, so it was difficult to implement backend logic without any visualizations because the development process I usually take was different.",
+    "techStack": [
+      "HTML, CSS, Sass, React.js, Python, Django, Redis, MongoDB, Docker, Postman"
+    ],
+    "devStyle": "team",
+    "link": {
+      "github": "https://github.com/yk-jp/expense-tracker"
+    }
+  },
+  {
+    "category": "web",
+    "title": "Codenames",
+    "description": "Codenames is a wordplay game for 4 to 10 players. You can play it with your friends by sending an invite link.",
+    "img": "/projects/img/codenames.png",
+    "whatIlearnt": "This was my first full-stack project! I was able to learn how to connect the frontend to the backend, how to take advantage of WebSocket, you name it! I tried hard to make the codebase readable and maintainable. To achieve that, I applied a dependency injection, MVC model, OOP, etc.",
+    "difficulties": "This project was challenging for me. The most difficult parts I encountered were maintaining and updating player and table data in each room every time players take action. I focused on reusing the same functions and classes and testing the code base to deal with the complicated data flow properly and got over lots of hurdles on this project.",
+    "techStack": [
+      "HTML",
+      "CSS",
+      "Bootstrap",
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Socket.io",
+      "Sequelize",
+      "MySQL",
+      "Jest"
+    ],
+    "devStyle": "personal",
+    "link": {
+      "github": "https://github.com/yk-jp/Codenames",
+      "live": "https://web-codenames-app.netlify.app/"
+    }
+  },
+  {
+    "category": "web",
+    "title": "portfolio-v1",
+    "description": "This is my first portfolio site",
+    "img": "/projects/img/portfolio.png",
+    "whatIlearnt": "I learnt styled-components and webpack. On top of that, I learnt why babel is widely used as JavaScript transpiler.",
+    "difficulties": "I struggled to make sentences fit in the image size when zooming in.",
+    "techStack": [
+      "HTML",
+      "CSS",
+      "Materialize",
+      "styled-components",
+      "React",
+      "TypeScript",
+      "webpack",
+      "Babel"
+    ],
+    "devStyle": "personal",
+    "link": {
+      "github": "https://github.com/yk-jp/portfolio",
+      "live": "https://portfolio-yk-jp.vercel.app/"
+    }
+  },
+  {
+    "category": "web",
+    "title": "Password Manager",
+    "description": "This is a full stack app to manage your password.",
+    "img": "/projects/img/passwordmanager.png",
+    "whatIlearnt": "I was able to learn the basic authentication system. First time I incorporated authentication logic in my project. I was happy to grasp the understanding of how and where to store and manage tokens(e.g. cookie or local storage) and why exactly JWT is used.",
+    "difficulties": "I needed to digest how the refresh token works and how each request and response has to be authorized in the first place. I browsed loads of articles on the internet and learnt from them enough.",
+    "techStack": [
+      "HTML",
+      "CSS",
+      "Bootstrap",
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Postman",
+      "Jest",
+      "Redis",
+      "MySQL",
+      "JWT",
+      "PM2"
+    ],
+    "devStyle": "personal",
+    "link": {
+      "github": "https://github.com/yk-jp/PasswordManager"
+    }
+  },
+  {
+    "category": "web",
+    "title": "CLI",
+    "description": "This app is a Command Line Interface that can handle general commands. It supports both the Absolute path and the relative path.",
+    "img": "/projects/img/cli.png",
+    "whatIlearnt": "Implementing a tree structure was essential for this project to manage each file and folder in terms of complexity. I could apply the doubly linked list to manage files and folders inside a directory and organize it all in a hierarchical directory. Also, I learnt how commands can validate input data.",
+    "difficulties": "I didn't realize that list objects are not suitable to the project to manage hierarchical structures. When I took time complexity into consideration, some commands like 'mv' got me thinking that it's not an optimal solution compared to the doubly linked list. I should have kept possible extensibility in mind, but I could understand the point of how important designing models are throughout the project.",
+    "techStack": ["HTML", "CSS", "Bootstrap", "JavaScript"],
+    "devStyle": "personal",
+    "link": {
+      "github": "https://github.com/yk-jp/CLI",
+      "live": "https://yk-jp.github.io/CLI/"
+    }
+  },
+  {
+    "category": "web",
+    "title": "blackjack",
+    "description": "This is a board game widely played all over the world. You can play it with 2 CPUs.",
+    "img": "/projects/img/blackjack.png",
+    "whatIlearnt": "I learnt OOP and MVC from this project. I figured that splitting the codebase into multiple components or classes is easy to maintain. I was able to utilize functions and fix code without any problems!",
+    "difficulties": "I struggled with how classes like 'Player' and 'Dealer' should be defined. At first, some main functions were not understandable and complicated. So, I restarted the whole model component from the architecture. I could work on it more efficiently in the end.",
+    "techStack": ["HTML", "CSS", "Bootstrap", "JavaScript"],
+    "devStyle": "personal",
+    "link": {
+      "github": "https://github.com/yk-jp/blackjack",
+      "live": "https://yk-jp.github.io/blackjack/"
+    }
+  }
+]

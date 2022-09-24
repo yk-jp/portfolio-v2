@@ -41,16 +41,16 @@ const Header = () => {
     el.classList.add("hidden");
   };
 
-  const navBarHandler = (e: MouseEvent) => {
-    if (navBtnRef.current?.contains(e.target as Node)) return;
-
-    if (!navMenuRef.current?.contains(e.target as Node)) {
-      const el = document.getElementById(targetElId)!;
-      hideElement(el);
-    }
-  };
-
   useEffect(() => {
+    const navBarHandler = (e: MouseEvent) => {
+      if (navBtnRef.current?.contains(e.target as Node)) return;
+
+      if (!navMenuRef.current?.contains(e.target as Node)) {
+        const el = document.getElementById(targetElId)!;
+        hideElement(el);
+      }
+    };
+
     document.addEventListener("mousedown", navBarHandler);
 
     return () => {
@@ -107,11 +107,8 @@ const Header = () => {
             <ul className="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
               {sections.map((sec, idx) => {
                 return (
-                  <Link href={sec.link} className="">
-                    <li
-                      key={`${idx}-${sec.title}`}
-                      className="block py-2 pr-4 pl-3 rounded cursor-pointer hover:text-blue-700 md:p-0 md:dark:hover:text-white"
-                    >
+                  <Link href={sec.link} key={`${idx}-${sec.title}`}>
+                    <li className="block py-2 pr-4 pl-3 rounded cursor-pointer hover:text-blue-700 md:p-0 md:dark:hover:text-white">
                       {sec.title}
                     </li>
                   </Link>
