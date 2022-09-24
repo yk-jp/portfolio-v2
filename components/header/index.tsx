@@ -108,9 +108,7 @@ const Header = () => {
               {sections.map((sec, idx) => {
                 return (
                   <Link href={sec.link} key={`${idx}-${sec.title}`}>
-                    <li
-                      className="block py-2 pr-4 pl-3 rounded cursor-pointer hover:text-blue-700 md:p-0 md:dark:hover:text-white"
-                    >
+                    <li className="block py-2 pr-4 pl-3 rounded cursor-pointer hover:text-blue-700 md:p-0 md:dark:hover:text-white">
                       {sec.title}
                     </li>
                   </Link>
