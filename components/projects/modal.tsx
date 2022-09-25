@@ -16,16 +16,19 @@ const Modal = (props: any) => {
         <div className="relative bg-white rounded-lg shadow">
           {/* <!-- Modal header --> */}
           <div className="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600">
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-              {project.title}
-            </h3>
-            {
-              project.devStyle &&
-              <span className="text-xs font-semibold inline-block py-1 px-2 mx-3 mt-1 rounded text-blue-600 bg-blue-200 last:mr-0">
-                {project.devStyle}
+            <div>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                {project.title}
+              </h3>
+              {project.devStyle && (
+                <span className="text-xs font-semibold inline-block py-1 px-2 mr-2 mt-1 rounded text-blue-600 bg-blue-200 last:mr-0">
+                  {project.devStyle}
+                </span>
+              )}
+              <span className="text-xs font-semibold inline-block py-1 px-2 mr-2 mt-1 rounded text-blue-600 bg-blue-200 last:mr-0">
+                {project.category}
               </span>
-            }
-
+            </div>
             <button
               className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
               onClick={() => toggleModal(null)}
