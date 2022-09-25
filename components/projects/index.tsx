@@ -6,6 +6,7 @@ import Link from "next/link";
 import Modal from "./modal";
 import projectsData from "../../public/projects/data/projects.json";
 import { TabMenu } from "../../type/project";
+import Image from "next/image";
 
 const Projects: NextPage = () => {
   const hidden = "hidden";
@@ -21,16 +22,16 @@ const Projects: NextPage = () => {
   };
 
   const isModalOpen = () => {
-    if(!modalProject) return false
-    return true
-  }
+    if (!modalProject) return false;
+    return true;
+  };
 
   const toggleBodyScrollStyle = () => {
-   const body = document.querySelector("body")!;
+    const body = document.querySelector("body")!;
     if (body.style.overflow === hidden) {
       body.style.overflow = auto;
-      return
-    } 
+      return;
+    }
     body.style.overflow = hidden;
   };
 
@@ -39,9 +40,9 @@ const Projects: NextPage = () => {
     return highLight;
   };
 
-  const toggleModal = (project : any) => {
-    toggleBodyScrollStyle()
-    setModalProject(project)
+  const toggleModal = (project: any) => {
+    toggleBodyScrollStyle();
+    setModalProject(project);
   };
 
   const filterProjects = (menu: String) => {
@@ -93,29 +94,27 @@ const Projects: NextPage = () => {
           </ul>
           <div className="flex flex-wrap justify-between">
             {!hasProjects() && (
-              <p className="mb-3 font-normal text-gray-700">
-                Comming soon...
-              </p>
+              <p className="mb-3 font-normal text-gray-700">Comming soon...</p>
             )}
 
-            {
-              isModalOpen() && 
-                <Modal
-                  project={modalProject}
-                  toggleModal={toggleModal}
-                />
-            }
+            {isModalOpen() && (
+              <Modal project={modalProject} toggleModal={toggleModal} />
+            )}
 
             {projectsList.map((project, idx) => {
               return (
                 <>
                   <div
-                    className="m-auto mb-3 w-8/12 md:w-[45%] bg-white rounded-lg border border-gray-200 shadow-md h-fit md:mb-0 md:m-3"
+                    className="m-auto mb-3 w-9/12 md:w-[45%] bg-white rounded-lg border border-gray-200 shadow-md h-fit md:mb-0 md:m-3"
                     key={`${idx}-${project.title}`}
                   >
-                    <img
+                    <Image
                       src={project.img}
-                      className="rounded-t-lg w-full p-0 h-[200px]"
+                      alt=""
+                      width="100%"
+                      layout="responsive"
+                      height="50%"
+                      className="rounded-t-lg"
                     />
                     <div className="p-5 h-1/2">
                       <p className="mb-4 text-2xl font-bold tracking-tight text-gray-900">
@@ -124,10 +123,8 @@ const Projects: NextPage = () => {
                       <p className="mb-5 font-normal text-gray-700">
                         {project.description}
                       </p>
-                      <hr 
-                        className="bg-gray-100"
-                      />
-                      <br/>
+                      <hr className="bg-gray-100" />
+                      <br />
                       <button
                         className="inline-flex items-center py-2 px-3 text-sm font-medium text-center rounded-lg focus:ring-4 focus:outline-none focus:ring-blue-300 mr-3 hover:text-blue-700"
                         onClick={() => toggleModal(project)}

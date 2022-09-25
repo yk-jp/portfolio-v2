@@ -47,9 +47,12 @@ const Modal = (props: any) => {
                 <p className="mb-4 font-bold tracking-tight text-gray-900">
                   Tech Stack
                 </p>
-                {project.techStack.map((name: String) => {
+                {project.techStack.map((name: String, idx: number) => {
                   return (
-                    <span className="text-xs font-semibold inline-block py-1 px-2 mx-1 rounded text-blue-600 bg-blue-200 last:mr-0 mr-1">
+                    <span
+                      key={`techStack-${name}-${idx}`}
+                      className="text-xs font-semibold inline-block py-1 px-2 mx-1 rounded text-blue-600 bg-blue-200 last:mr-0 mr-1"
+                    >
                       {name}
                     </span>
                   );
