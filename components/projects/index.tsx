@@ -117,9 +117,17 @@ const Projects: NextPage = () => {
                       className="rounded-t-lg"
                     />
                     <div className="p-5 h-1/2">
-                      <p className="mb-4 text-2xl font-bold tracking-tight text-gray-900">
-                        {project.title}
-                      </p>
+                      <div className="flex items-center flex-wrap">
+                        <p className="mb-4 text-2xl font-bold tracking-tight text-gray-900 m-0">
+                          {project.title}
+                        </p>
+                        {project.devStyle && (
+                          <span className="text-xs font-semibold inline-block py-1 px-2 mx-3 mb-3 rounded text-blue-600 bg-blue-200 last:mr-0">
+                            {project.devStyle}
+                          </span>
+                        )}
+                      </div>
+
                       <p className="mb-5 font-normal text-gray-700">
                         {project.description}
                       </p>
