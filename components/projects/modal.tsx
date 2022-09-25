@@ -19,6 +19,13 @@ const Modal = (props: any) => {
             <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
               {project.title}
             </h3>
+            {
+              project.devStyle &&
+              <span className="text-xs font-semibold inline-block py-1 px-2 mx-3 mt-1 rounded text-blue-600 bg-blue-200 last:mr-0">
+                {project.devStyle}
+              </span>
+            }
+
             <button
               className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
               onClick={() => toggleModal(null)}
