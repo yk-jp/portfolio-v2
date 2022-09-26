@@ -7,7 +7,7 @@ import theme from "../../utils/theme";
 import sections from "../../utils/section";
 
 const Header = () => {
-  const [darkMode, setDarkMode] = useState(theme.light)
+  const [darkMode, setDarkMode] = useState(theme.light);
 
   const navBtnRef = useRef<HTMLButtonElement>(null);
   const navMenuRef = useRef<HTMLDivElement>(null);
@@ -42,8 +42,8 @@ const Header = () => {
 
   const toggleDarkClassToHTML = () => {
     const rootElement = document.documentElement;
-    if (!rootElement.classList.contains(theme.dark)){
-      rootElement.classList.add(theme.dark)
+    if (!rootElement.classList.contains(theme.dark)) {
+      rootElement.classList.add(theme.dark);
       return;
     }
     rootElement.classList.remove(theme.dark);
@@ -52,22 +52,22 @@ const Header = () => {
   const toggleDarkMode = () => {
     toggleDarkClassToHTML();
 
-    if(darkMode !== theme.dark) { 
-      localStorage.setItem(theme.theme, theme.dark); 
-      setDarkMode(theme.dark)
-      return
-    } 
+    if (darkMode !== theme.dark) {
+      localStorage.setItem(theme.theme, theme.dark);
+      setDarkMode(theme.dark);
+      return;
+    }
 
-    localStorage.setItem(theme.theme, theme.light); 
-    setDarkMode(theme.light)
+    localStorage.setItem(theme.theme, theme.light);
+    setDarkMode(theme.light);
   };
 
   const initDarkMode = () => {
     const storedMode = localStorage.getItem(theme.theme);
     if (!storedMode || storedMode !== theme.dark) return;
     const rootElement = document.documentElement;
-    rootElement.classList.add(theme.dark)
-    setDarkMode(theme.dark)
+    rootElement.classList.add(theme.dark);
+    setDarkMode(theme.dark);
   };
 
   useEffect(() => {

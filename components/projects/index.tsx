@@ -82,8 +82,8 @@ const Projects: NextPage = () => {
                   <button
                     className={`nav-link w-full block font-medium text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 my-2
                     text-gray-900 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-blue-700 ${highLightTab(
-                    menu
-                  )}`}
+                      menu
+                    )}`}
                     id={menu}
                     onClick={() => filterProjects(menu)}
                   >
@@ -95,7 +95,9 @@ const Projects: NextPage = () => {
           </ul>
           <div className="flex flex-wrap justify-between">
             {!hasProjects() && (
-              <p className="mb-3 font-normal text-gray-900 dark:text-gray-400">Comming soon...</p>
+              <p className="mb-3 font-normal text-gray-900 dark:text-gray-400">
+                Comming soon...
+              </p>
             )}
 
             {isModalOpen() && (
