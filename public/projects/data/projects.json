@@ -18,7 +18,16 @@
     "whatIlearnt": "I wanted to know the importance of containerization and applied docker in the app. I learned how to containerize everything we need and connect them to one another. Besides that, I learnt how to collab with my team members to develop efficiently.",
     "difficulties": "I was used to developing full-stack apps by myself, so it was difficult to implement backend logic without any visualizations because the development process I usually take was different.",
     "techStack": [
-      "HTML", "CSS", "Sass", "React.js", "Python", "Django", "Redis", "MongoDB", "Docker", "Postman"
+      "HTML",
+      "CSS",
+      "Sass",
+      "React.js",
+      "Python",
+      "Django",
+      "Redis",
+      "MongoDB",
+      "Docker",
+      "Postman"
     ],
     "devStyle": "team",
     "link": {
