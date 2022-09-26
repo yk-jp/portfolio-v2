@@ -112,7 +112,7 @@ const Header = () => {
               <button
                 id={themeToggleId}
                 type="button"
-                className="text-black-500 dark:text-gray-400 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 hover:text-blue-700"
+                className="text-gray-900 dark:text-gray-400 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 hover:text-blue-700 dark:hover:text-blue-700"
                 onClick={toggleDarkMode}
               >
                 {darkMode === theme.dark ? (
@@ -133,7 +133,7 @@ const Header = () => {
               {sections.category.map((sec, idx) => {
                 return (
                   <Link href={sec.link} key={`${idx}-${sec.title}`}>
-                    <li className="block py-2 pr-4 pl-3 rounded cursor-pointer hover:text-blue-700 md:p-0 md:dark:hover:text-white">
+                    <li className="block py-2 pr-4 pl-3 rounded cursor-pointer hover:text-blue-700 dark:hover:text-blue-700 md:p-0 text-gray-900 dark:text-gray-300">
                       {sec.title}
                     </li>
                   </Link>
