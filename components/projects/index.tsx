@@ -2,16 +2,16 @@ import { useState } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 
 import Modal from "./modal";
 import projectsData from "../../public/projects/data/projects.json";
 import { TabMenu } from "../../type/project";
-import Image from "next/image";
 
 const Projects: NextPage = () => {
   const hidden = "hidden";
   const auto = "auto";
-  const highLight = "text-blue-700";
+  const highLight = "text-blue-700 dark:text-blue-700";
 
   const [tabFilter, setTabFilter] = useState<String>(TabMenu.All);
   const [projectsList, setProjectList] = useState(projectsData);
@@ -62,9 +62,9 @@ const Projects: NextPage = () => {
       <Head>
         <title>Projects - Yusuke Portfolio</title>
       </Head>
-      <section className="bg-white h-max py-8">
+      <section className="bg-white h-max py-8 dark:bg-gray-900">
         <div className="py-8 mx-auto max-w-screen-md content-center">
-          <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900">
+          <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-gray-300">
             Projects
           </h2>
           <ul
@@ -75,14 +75,15 @@ const Projects: NextPage = () => {
             {Object.keys(TabMenu).map((menu, idx) => {
               return (
                 <li
-                  className={`nav-item flex-grow text-center ${highLightTab(
-                    menu
-                  )}`}
+                  className="nav-item flex-grow text-center "
                   role="presentation"
                   key={`${idx}-${menu} project tab`}
                 >
                   <button
-                    className="nav-link w-full block font-medium text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 my-2 hover:bg-gray-100"
+                    className={`nav-link w-full block font-medium text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 my-2
+                    text-gray-900 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-blue-700 ${highLightTab(
+                    menu
+                  )}`}
                     id={menu}
                     onClick={() => filterProjects(menu)}
                   >
@@ -94,7 +95,7 @@ const Projects: NextPage = () => {
           </ul>
           <div className="flex flex-wrap justify-between">
             {!hasProjects() && (
-              <p className="mb-3 font-normal text-gray-700">Comming soon...</p>
+              <p className="mb-3 font-normal text-gray-900 dark:text-gray-400">Comming soon...</p>
             )}
 
             {isModalOpen() && (
@@ -105,7 +106,7 @@ const Projects: NextPage = () => {
               return (
                 <>
                   <div
-                    className="m-auto mb-3 w-9/12 md:w-[45%] bg-white rounded-lg border border-gray-200 shadow-md h-fit md:mb-0 md:m-3"
+                    className="m-auto mb-3 w-9/12 md:w-[45%] rounded-lg border border-gray-200 shadow-md h-fit md:mb-0 md:m-3 dark:bg-gray-700 dark:border-gray-600"
                     key={`${idx}-${project.title}`}
                   >
                     <Image
@@ -117,38 +118,39 @@ const Projects: NextPage = () => {
                       className="rounded-t-lg"
                     />
                     <div className="p-5 h-1/2">
-                      <div className="flex items-center flex-wrap">
-                        <p className="mb-4 text-2xl font-bold tracking-tight text-gray-900 m-0">
-                          {project.title}
-                        </p>
-                        {project.devStyle && (
-                          <span className="text-xs font-semibold inline-block py-1 px-2 mx-3 mb-3 rounded text-blue-600 bg-blue-200 last:mr-0">
-                            {project.devStyle}
-                          </span>
-                        )}
-                      </div>
-
-                      <p className="mb-5 font-normal text-gray-700">
+                      <p className="mb-4 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-300 m-0">
+                        {project.title}
+                      </p>
+                      <p className="mb-5 font-normal text-gray-900 dark:text-gray-400">
                         {project.description}
                       </p>
+                      <span className="text-xs font-semibold inline-block py-1 px-2 mr-2 mb-3 rounded text-blue-600 bg-blue-200 last:mr-0">
+                        {project.category}
+                      </span>
+
+                      {project.devStyle && (
+                        <span className="text-xs font-semibold inline-block py-1 px-2 mr-2 mb-3 rounded text-blue-600 bg-blue-200 last:mr-0">
+                          {project.devStyle}
+                        </span>
+                      )}
                       <hr className="bg-gray-100" />
                       <br />
                       <button
-                        className="inline-flex items-center py-2 px-3 text-sm font-medium text-center rounded-lg focus:ring-4 focus:outline-none focus:ring-blue-300 mr-3 hover:text-blue-700"
+                        className="inline-flex items-center py-2 px-3 text-sm font-medium text-center rounded-lg focus:ring-4 focus:outline-none focus:ring-blue-300 mr-3 hover:text-blue-700 dark:hover:text-blue-700 text-gray-900 dark:text-gray-300"
                         onClick={() => toggleModal(project)}
                       >
                         Read more
                       </button>
                       {project.link.github && (
                         <Link href={project.link.github}>
-                          <button className="inline-flex items-center py-2 px-3 text-sm font-medium text-center rounded-lg focus:ring-4 focus:outline-none focus:ring-blue-300 mr-3 hover:text-blue-700">
+                          <button className="inline-flex items-center py-2 px-3 text-sm font-medium text-center rounded-lg focus:ring-4 focus:outline-none focus:ring-blue-300 mr-3 hover:text-blue-700 dark:hover:text-blue-700 text-gray-900 dark:text-gray-300">
                             Github
                           </button>
                         </Link>
                       )}
                       {project.link.live && (
                         <Link href={project.link.live}>
-                          <button className="inline-flex items-center py-2 px-3 text-sm font-medium text-center rounded-lg focus:ring-4 focus:outline-none focus:ring-blue-300 mr-3 hover:text-blue-700">
+                          <button className="inline-flex items-center py-2 px-3 text-sm font-medium text-center rounded-lg focus:ring-4 focus:outline-none focus:ring-blue-300 mr-3 hover:text-blue-700 dark:hover:text-blue-700 text-gray-900 dark:text-gray-300">
                             Live
                           </button>
                         </Link>
