@@ -62,7 +62,7 @@ const Projects: NextPage = () => {
       <Head>
         <title>Projects - Yusuke Portfolio</title>
       </Head>
-      <section className="bg-white h-max py-8">
+      <section className="bg-white h-max py-8 dark:bg-gray-900">
         <div className="py-8 mx-auto max-w-screen-md content-center">
           <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900">
             Projects
