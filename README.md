@@ -19,7 +19,7 @@ https://yk-jp-portfolio.vercel.app/
  ``` 
 
 ## Install Dependencies
-Run following commands in the root folder
+Run following commands in the root directory
 ```
 npm install 
 ```
