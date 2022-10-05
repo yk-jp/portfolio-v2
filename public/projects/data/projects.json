@@ -1,6 +1,17 @@
 [
   {
     "category": "oss",
+    "title": "Add cypress component test to React component",
+    "description": "I contributed to the OSS built for managing multi-channel notifications with a single API.",
+    "img": "/projects/img/novu.png",
+    "whatIlearnt": "I learnt cypress for the first time through this work. I learnt cypress for 1 day and worked on this issue to increase a test coverage.",
+    "difficulties": "I struggled to handle the permission of clipboard in the chrome browser. The test code worked expectedly in the local environment but did not in CI. I fixed the way to check if text is properly copied to the clipboard when users tapped a button.",
+    "link": {
+      "github": "https://github.com/novuhq/novu/pull/1412"
+    }
+  },
+  {
+    "category": "oss",
     "title": "support new feature to generate pdf and deprecate a class for pdf to enhance the usability",
     "description": "This is the pdf generator built in python that I contributed to for the first time!",
     "img": "/projects/img/fpdf2.png",
