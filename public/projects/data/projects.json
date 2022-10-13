@@ -1,13 +1,46 @@
 [
   {
     "category": "oss",
+    "title": "Create plugin that joins strings",
+    "description": "I contributed to the OSS built for low-code / no-code platform.",
+    "img": "/projects/img/tracardi.png",
+    "whatIlearnt": "The documentation to create a new plugin was explained. I followed it properly and I was able to get on the track straight away.",
+    "difficulties": "I was confused about the issue as I found a similar issue and plugin.    I made the issue clear right after I asked the maintainer about it without any hesitation. I could swiftly deal with the issue and my PR was merged.",
+    "link": {
+      "github": "https://github.com/Tracardi/tracardi/pull/738"
+    }
+  },
+  {
+    "category": "oss",
+    "title": "Document Join string list plugin",
+    "description": "I contributed to the OSS built for low-code / no-code platform.",
+    "img": "/projects/img/tracardi-api.png",
+    "whatIlearnt": "I followed a format that is already determined. I tried hard to make it understandable. I checked if the the documentation I wrote is properly shown on the browser and created the PR.",
+    "difficulties": "No difficulties.",
+    "link": {
+      "github": "https://github.com/Tracardi/tracardi-api/pull/162"
+    }
+  },
+  {
+    "category": "oss",
     "title": "Add cypress component test to React component",
     "description": "I contributed to the OSS built for managing multi-channel notifications with a single API.",
     "img": "/projects/img/novu.png",
     "whatIlearnt": "I learnt cypress for the first time through this work. I learnt cypress for 1 day and worked on this issue to increase a test coverage.",
     "difficulties": "I struggled to handle the permission of clipboard in the chrome browser. The test code worked expectedly in the local environment but did not in CI. I fixed the way to check if text is properly copied to the clipboard when users tapped a button.",
     "link": {
-      "github": "https://github.com/novuhq/novu/pull/1412"
+      "github": "https://github.com/codinasion/program/pull/1921"
+    }
+  },
+  {
+    "category": "oss",
+    "title": "add the solution of find the sum of cubes of numbers by recursion",
+    "description": "I added the solution of find the sum of cubes of numbers by recursion",
+    "img": "/projects/img/cordinasion.png",
+    "whatIlearnt": "I wrote a sample code. I checked an edge case for the input data using exception handling. The program is executable for whoever wants to learn and test it.",
+    "difficulties": "How to write beginner-friendly code with comments included.",
+    "link": {
+      "github": "https://github.com/codinasion/program/pull/1921"
     }
   },
   {
