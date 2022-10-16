@@ -1,6 +1,17 @@
 [
   {
     "category": "oss",
+    "title": "Google Docs Integration",
+    "description": "I contributed to the OSS built for low-code / no-code workflow automation.",
+    "img": "/projects/img/outerbridge.png",
+    "whatIlearnt": "I mainly read Google Docs API documentation and similar code that is already implemented. When I tested the code, I was able to find some bugs and fixed them before it was merged.",
+    "difficulties": "I encountered an obstacle to deal with. It was a feature for updating a document that can be used flexibly at a single request. It made the UI task difficult, and I might as well have asked the maintainer about how the task should be done. Thanks to the proper advice, I finished the first implementation.",
+    "link": {
+      "github": "https://github.com/Outerbridgeio/Outerbridge/pull/107"
+    }
+  },
+  {
+    "category": "oss",
     "title": "Create plugin that joins strings",
     "description": "I contributed to the OSS built for low-code / no-code platform.",
     "img": "/projects/img/tracardi.png",
