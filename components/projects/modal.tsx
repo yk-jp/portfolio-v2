@@ -9,7 +9,7 @@ const Modal = (props: any) => {
   return (
     <div
       id="modalEl"
-      className="flex justify-center items-center overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full"
+      className="flex justify-center items-center overflow-y-auto overflow-x-hidden fixed top-3 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full"
     >
       <div className="relative p-4 w-full max-w-2xl h-full md:h-auto">
         {/* <!-- Modal content --> */}
