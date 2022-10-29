@@ -82,6 +82,9 @@
       "Redis",
       "MongoDB",
       "Docker",
+      "Nginx",
+      "Gunicorn",
+      "AWS EC2",
       "Postman"
     ],
     "devStyle": "team",
